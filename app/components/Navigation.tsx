@@ -39,7 +39,7 @@ const Navigation = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
    };
 
-  const useSmoothScroll = (event:React.MouseEvent<HTMLAnchorElement> , href:string) => {
+  const smoothScroll = (event:React.MouseEvent<HTMLAnchorElement> , href:string) => {
     event.preventDefault();
 
     const targetElement = document.querySelector(href)
@@ -64,7 +64,7 @@ const Navigation = () => {
             <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             { navigationList.map((item:{href: string;label: string;}, index:number) => (
               <li key={index}>
-                <Link href={item.href} className='list-none hover:text-yellow-400' onClick={(event) => useSmoothScroll(event, item.href)}>
+                <Link href={item.href} className='list-none hover:text-yellow-400' onClick={(event) => smoothScroll(event, item.href)}>
                   {item.label}
                 </Link>
               </li>
@@ -83,7 +83,7 @@ const Navigation = () => {
             <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             { navigationList.map((item:{href: string;label: string;}, index:number) => (
               <li key={index}>
-                <Link href={item.href} className='list-none hover:text-yellow-400 block w-full' onClick={(event) => useSmoothScroll(event, item.href)}>
+                <Link href={item.href} className='list-none hover:text-yellow-400 block w-full' onClick={(event) => smoothScroll(event, item.href)}>
                   {item.label}
                 </Link>
               </li>

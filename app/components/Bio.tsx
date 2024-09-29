@@ -37,7 +37,7 @@ const Bio = () => {
           whileInView={{opacity: 1, x: 0}}
           transition={{duration: 0.8, delay: 3*0.5}}
         >
-          I'm excited to connect with like-minded professionals and explore new possibilities. Please feel free to check me out my 
+          I&apos;m excited to connect with like-minded professionals and explore new possibilities. Please feel free to check me out my 
           <a href="https://github.com/nomeo-310" target="_blank" rel="noopener noreferrer" className='underline'>github repository</a> 
           for more details on my projects and skills.
         </motion.p>

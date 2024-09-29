@@ -73,7 +73,7 @@ const Contact = () => {
         formData,
         "Z07lRblwfF0EUzty_",
       )
-      .then((response) => {
+      .then((_response) => {
         toast.success("Message sent successfully.")
         setFormData({name: "", email: "", title: "", message: ""})
       })
