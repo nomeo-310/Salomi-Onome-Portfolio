@@ -53,9 +53,17 @@ const Projects = () => {
       name: 'Nomeo Suites',
       description: 'This is a real estate webapp that is meant to help users lease and purchase apartments while also enabling users to apply as agent and advertise apartment. This app is unique and not a clone.',
       techStacks: 'NextJS, ReactJS, TailwindCSS, NodeJS, MongoDB',
-      image: '/images/nomeo-realtors.png',
+      image: '/images/nomeo-suites.png',
       githubLink: 'https://github.com/nomeo-310/Nomeo-Realtors-5.0',
       liveLink: 'https://nomeo-realtors-5-0.vercel.app/'     
+    },
+    {
+      name: 'Nomeo Realtors',
+      description: 'This is a real estate webapp that is meant to help users lease and purchase apartments while also enabling users to apply as agent and advertise apartment. This app is unique and an upgrade to Nomeo Suites.',
+      techStacks: 'NextJS, ReactJS, TailwindCSS, NodeJS, MongoDB',
+      image: '/images/nomeo-realtors.png',
+      githubLink: 'https://github.com/nomeo-310/Nomeo-Realtors-5.1',
+      liveLink: 'https://nomeo-realtors-5-1.vercel.app/'     
     }
   ];
 
@@ -89,7 +97,7 @@ const Projects = () => {
                 </a>
                 <a href={item.liveLink} target='_blank' rel='noopener noreferrer' className='hover:bg-gray-300 rounded-full bg-white text-black px-4 py-2'>
                   <div className="flex items-center">
-                    <span className='text-sm'>View on WebApp</span>
+                    <span className='text-sm'>View Livelink</span>
                     <MdArrowOutward/>
                   </div>
                 </a>
