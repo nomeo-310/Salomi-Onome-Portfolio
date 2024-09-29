@@ -76,13 +76,15 @@ const Projects = () => {
             initial={{opacity: 0, scale: 0.9}}
             whileInView={{opacity: 1, scale: 1}}
             transition={{duration: 0.5}}
-            whileHover={{scale: 1.05}} 
+            whileHover={{scale: 1.05}}
+            whileTap={{scale: 1.05}}
             className="group relative overflow-hidden rounded-lg w-full h-[14rem] md:h-[16rem] lg:h-[17.5rem] cursor-pointer" 
             key={index}>
             <Image src={item.image} alt={item.name} fill className='object-cover group-hover:scale-105'/>
             <motion.div
               initial={{opacity: 0}}
               whileHover={{opacity: 1}}
+              whileTap={{opacity: 1}}
               transition={{duration: 0.5}}            
               className="p-4 lg:p-6 w-full absolute left-0 top-0 inset-0 flex flex-col items-center justify-between backdrop-blur-md bg-black/30 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-active:opacity-100">
               <h3 className='text-xl mb-2'>{item.name}</h3>
