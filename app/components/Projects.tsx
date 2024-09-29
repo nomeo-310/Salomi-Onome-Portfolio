@@ -84,18 +84,18 @@ const Projects = () => {
               initial={{opacity: 0}}
               whileHover={{opacity: 1}}
               transition={{duration: 0.5}}            
-              className="p-4 lg:p-6 w-full absolute left-0 top-0 inset-0 flex flex-col items-center justify-between backdrop-blur-md bg-black/30 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+              className="p-4 lg:p-6 w-full absolute left-0 top-0 inset-0 flex flex-col items-center justify-between backdrop-blur-md bg-black/30 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-active:opacity-100">
               <h3 className='text-xl mb-2'>{item.name}</h3>
               <p className='my-2 text-sm'>{item.techStacks}</p>
               <p className='lg:mb-8 mb-3 tex-sm line-clamp-4'>{item.description}</p>
               <div className="w-full justify-between items-center flex ">
-                <a href={item.githubLink} target='_blank' rel='noopener noreferrer' className='hover:bg-gray-300 rounded-full bg-white text-black px-4 py-2'>
+                <a href={item.githubLink} target='_blank' rel='noopener noreferrer' className='hover:bg-gray-300 active:bg-gray-300 rounded-full bg-white text-black px-4 py-2'>
                   <div className="flex items-center">
                     <span className='text-sm'>View on Github</span>
                     <MdArrowOutward/>
                   </div>
                 </a>
-                <a href={item.liveLink} target='_blank' rel='noopener noreferrer' className='hover:bg-gray-300 rounded-full bg-white text-black px-4 py-2'>
+                <a href={item.liveLink} target='_blank' rel='noopener noreferrer' className='hover:bg-gray-300 active:bg-gray-300 rounded-full bg-white text-black px-4 py-2'>
                   <div className="flex items-center">
                     <span className='text-sm'>View Livelink</span>
                     <MdArrowOutward/>

@@ -72,7 +72,7 @@ const Navigation = () => {
           </ul>
         </div>
         <div className="lg:hidden">
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end pr-4">
             <button className='focus:outline-none' onClick={toggleMenu}>
               {isMobileMenuOpen ? (<HiXMark size={32}/>) : (<HiBars3 size={32}/>)}
             </button>
