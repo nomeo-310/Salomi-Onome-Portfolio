@@ -80,11 +80,7 @@ const Projects = () => {
             className="group relative overflow-hidden rounded-lg w-full h-[14rem] md:h-[16rem] lg:h-[17.5rem] cursor-pointer" 
             key={index}>
             <Image src={item.image} alt={item.name} fill className='object-cover group-hover:scale-105'/>
-            <motion.div
-              initial={{opacity: 0}}
-              whileHover={{opacity: 1}}
-              transition={{duration: 0.5}}            
-              className="p-4 lg:p-6 w-full absolute left-0 top-0 inset-0 flex flex-col items-center justify-between backdrop-blur-md bg-black/30 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-active:opacity-100">
+            <div  className="p-4 lg:p-6 w-full absolute left-0 top-0 inset-0 flex flex-col items-center justify-between backdrop-blur-md bg-black/30 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-active:opacity-100">
               <h3 className='text-xl mb-2'>{item.name}</h3>
               <p className='my-2 text-sm'>{item.techStacks}</p>
               <p className='lg:mb-8 mb-3 tex-sm line-clamp-4'>{item.description}</p>
@@ -102,7 +98,7 @@ const Projects = () => {
                   </div>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         ))}
       </div>
