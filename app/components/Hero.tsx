@@ -31,7 +31,7 @@ const Hero = () => {
         transition={{duration: 1}}
       >
         <div className="relative w-full aspect-square flex items-center justify-center">
-          <Image src={'/images/dummy_image.jpg'} alt='profile_image' width={520} height={520} className='rounded-2xl'/>
+          <Image src={'/images/dummy_image.png'} alt='profile_image' width={520} height={520} className='rounded-2xl'/>
         </div>
       </motion.div>
     </section>
