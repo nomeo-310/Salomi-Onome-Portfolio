@@ -68,7 +68,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className='max-w-5xl w-full px-4' id='skills'>
+    <section className='pt-0 max-w-5xl w-full px-4' id='skills'>
       <AnimatedHeader title='Skills' className='mt-20 mb-10'/>
       <motion.div
         initial='hidden'
@@ -92,7 +92,7 @@ const Skills = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   )
 }
 

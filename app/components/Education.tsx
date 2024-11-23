@@ -24,7 +24,7 @@ const Education = () => {
   ];
 
   return (
-    <section className='py-8 max-w-5xl w-full px-4' id='education'>
+    <section className='pt-20 max-w-5xl w-full px-4' id='education'>
       <AnimatedHeader title='Education' className='mb-4'/>
       { educationData.map((item, index:number) => (
         <motion.div

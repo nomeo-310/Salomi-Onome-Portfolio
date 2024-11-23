@@ -4,56 +4,80 @@ import Link from 'next/link';
 import React from 'react'
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 
+const navigationList = [
+  {
+    href: 'projects',
+    label: 'Projects'
+  },
+  {
+    href: 'bio',
+    label: 'Bio'
+  },
+  {
+    href: 'skills',
+    label: 'Skills'
+  },
+  {
+    href: 'experiences',
+    label: 'Work Experiences'
+  },
+  {
+    href: 'education',
+    label: 'Education'
+  },
+  {
+    href: 'contact',
+    label: 'Contact'
+  },
+];
+
+
 const Navigation = () => {
 
-  const navigationList = [
-    {
-      href: '#projects',
-      label: 'Projects'
-    },
-    {
-      href: '#bio',
-      label: 'Bio'
-    },
-    {
-      href: '#skills',
-      label: 'Skills'
-    },
-    {
-      href: '#experiences',
-      label: 'Work Experiences'
-    },
-    {
-      href: '#education',
-      label: 'Education'
-    },
-    {
-      href: '#contact',
-      label: 'Contact'
-    },
-  ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
    };
 
-  const smoothScroll = (event:React.MouseEvent<HTMLAnchorElement> , href:string) => {
-    event.preventDefault();
+   React.useEffect(() => {
+    const handleScroll =()=> {
+      const sections = document.querySelectorAll('section');
+      const scrollY = window.scrollY;
 
-    const targetElement = document.querySelector(href)
-    if (targetElement) {
-      const offSet = -85;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offSetPosition = elementPosition + window.scrollY + offSet;
-      window.scrollTo({
-        top: offSetPosition,
-        behavior: "smooth"
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY <= sectionBottom) {
+          setActiveSection(sections[index].id);
+          setIsMobileMenuOpen(false);
+        }
       });
-    }
-    setIsMobileMenuOpen(false)
-  };
+    };
+    
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+   },[])
+
+
+  // const smoothScroll = (event:React.MouseEvent<HTMLAnchorElement> , href:string) => {
+  //   event.preventDefault();
+
+  //   const targetElement = document.querySelector(href)
+  //   if (targetElement) {
+  //     const elementPosition = targetElement.getBoundingClientRect().top;
+  //     const offSetPosition = elementPosition + window.scrollY;
+  //     window.scrollTo({
+  //       top: offSetPosition,
+  //       behavior: "smooth"
+  //     });
+  //   }
+  //   setIsMobileMenuOpen(false)
+  // };
 
 
   return (
@@ -64,7 +88,7 @@ const Navigation = () => {
             <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             { navigationList.map((item:{href: string;label: string;}, index:number) => (
               <li key={index}>
-                <Link href={item.href} className='list-none hover:text-yellow-400' onClick={(event) => smoothScroll(event, item.href)}>
+                <Link href={`#${item.href}`} className={`list-none hover:text-yellow-400 ${activeSection === item.href ? 'text-yellow-400' : 'text-white'}`} >
                   {item.label}
                 </Link>
               </li>
@@ -81,9 +105,9 @@ const Navigation = () => {
         {isMobileMenuOpen && 
           <ul className='ml-4 mr-1 mt-4 flex flex-col gap-4 backdrop-blur-md py-4 pl-2 rounded bg-black/30'>
             <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            { navigationList.map((item:{href: string;label: string;}, index:number) => (
+            { navigationList.map((item:{href: string; label: string;}, index:number) => (
               <li key={index}>
-                <Link href={item.href} className='list-none hover:text-yellow-400 block w-full' onClick={(event) => smoothScroll(event, item.href)}>
+                <Link href={`#${item.href}`} className={`list-none hover:text-yellow-400 block w-full ${activeSection === item.href ? 'text-yellow-400' : 'text-white'} `}>
                   {item.label}
                 </Link>
               </li>

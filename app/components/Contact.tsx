@@ -21,7 +21,7 @@ type formDataProps = {
   name: string;
   email: string;
   title: string;
-  message: string
+  message: string;
 }
 
 const Contact = () => {
@@ -43,7 +43,6 @@ const Contact = () => {
         [name]: undefined,
       }))
     };
-
   }
 
   const handleSubmission = async (event:React.FormEvent<HTMLFormElement>) => {
@@ -89,7 +88,7 @@ const Contact = () => {
   }
 
   return ( 
-    <div className='max-w-5xl w-full px-4' id='contact'>
+    <section className='pt-20 max-w-5xl w-full px-4' id='contact'>
       <AnimatedHeader title="Let's Connect" className='my-8'/>
       <motion.form onSubmit={handleSubmission}
         initial={{opacity: 0}}
@@ -185,7 +184,7 @@ const Contact = () => {
           {isSending ? '...Sending message' : 'Send message'}
         </button>
       </motion.form>
-    </div>
+    </section>
   )
 }
 
