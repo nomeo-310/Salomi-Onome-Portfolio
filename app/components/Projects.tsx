@@ -31,7 +31,7 @@ const Projects = () => {
       techStacks: 'NextJS, ReactJS, TailwindCSS, NodeJS, MongoDB',
       image: '/images/nomeo-social.png',
       githubLink: 'https://github.com/nomeo-310/Nomeo-Social-5.2',
-      liveLink: 'https://nomeo-coliving.vercel.app/'     
+      liveLink: 'http://nomeo-social-5-2.vercel.app/'     
     },
     {
       name: 'Nomeo Blogs',
@@ -64,6 +64,14 @@ const Projects = () => {
       image: '/images/nomeo-realtors.png',
       githubLink: 'https://github.com/nomeo-310/Nomeo-Realtors-5.1',
       liveLink: 'https://nomeo-realtors-5-1.vercel.app/'     
+    },
+    {
+      name: 'UenduAnalytics',
+      description: 'This is a portfolio webapp for a data analyst based in canada. It is meant to show the data analyst projects and also show the data analyst skills and experience. It is strictly frontend project.',
+      techStacks: 'NextJS, ReactJS, TailwindCSS, NodeJS, MongoDB',
+      image: '/images/uendu-analytics.png',
+      githubLink: 'https://github.com/nomeo-310/Udobor-Endurance-Resume',
+      liveLink: 'https://uendurance-analytics.vercel.app/'     
     }
   ];
 

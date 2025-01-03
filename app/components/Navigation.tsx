@@ -63,29 +63,12 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll)
    },[])
 
-
-  // const smoothScroll = (event:React.MouseEvent<HTMLAnchorElement> , href:string) => {
-  //   event.preventDefault();
-
-  //   const targetElement = document.querySelector(href)
-  //   if (targetElement) {
-  //     const elementPosition = targetElement.getBoundingClientRect().top;
-  //     const offSetPosition = elementPosition + window.scrollY;
-  //     window.scrollTo({
-  //       top: offSetPosition,
-  //       behavior: "smooth"
-  //     });
-  //   }
-  //   setIsMobileMenuOpen(false)
-  // };
-
-
   return (
     <div>
       <nav className='fixed left-0 right-0 top-4 z-50 mb-5'>
         <div className="mx-auto hidden max-w-2xl justify-center rounded-lg border border-stone-50/30 bg-black/20 py-3 backdrop-blur-lg lg:flex">
           <ul className="flex items-center gap-4">
-            <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)} className={`${activeSection === null ? 'text-yellow-400': 'text-white'}`}>Home</Link>
             { navigationList.map((item:{href: string;label: string;}, index:number) => (
               <li key={index}>
                 <Link href={`#${item.href}`} className={`list-none hover:text-yellow-400 ${activeSection === item.href ? 'text-yellow-400' : 'text-white'}`} >
@@ -104,7 +87,7 @@ const Navigation = () => {
         </div>
         {isMobileMenuOpen && 
           <ul className='ml-4 mr-1 mt-4 flex flex-col gap-4 backdrop-blur-md py-4 pl-2 rounded bg-black/30'>
-            <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <Link href={'/'} onClick={() => setIsMobileMenuOpen(false)} className={`${activeSection === null ? 'text-yellow-400': 'text-white'}`}>Home</Link>
             { navigationList.map((item:{href: string; label: string;}, index:number) => (
               <li key={index}>
                 <Link href={`#${item.href}`} className={`list-none hover:text-yellow-400 block w-full ${activeSection === item.href ? 'text-yellow-400' : 'text-white'} `}>

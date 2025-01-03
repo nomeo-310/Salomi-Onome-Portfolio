@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <section className='lg:min-h-screen flex-wrap items-center flex' id='hero'>
+    <div className='lg:min-h-screen flex-wrap items-center flex'>
       <motion.div 
         className="w-full md:w-1/2"
         initial={{opacity: 0, x: -50}}
@@ -34,7 +34,7 @@ const Hero = () => {
           <Image src={'/images/dummy_image.png'} alt='profile_image' width={520} height={520} className='rounded-2xl'/>
         </div>
       </motion.div>
-    </section>
+    </div>
   )
 }
 
